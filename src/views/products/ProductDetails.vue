@@ -2,23 +2,23 @@
     <dialog ref="editDialog">
         <form @submit.prevent="submitEdit">
             <h4>Modifier l'article</h4>
-            <div>
+            <div class="uk-margin">
                 <label for="title">Titre:</label>
-                <input id="title" v-model="editForm.title" required />
+                <input class="uk-input" id="title" v-model="editForm.title" required />
             </div>
-            <div>
+            <div class="uk-margin">
                 <label for="author">Auteur:</label>
-                <input id="author" v-model="editForm.author" required />
+                <input class="uk-input" id="author" v-model="editForm.author" required />
             </div>
-            <div>
+            <div class="uk-margin">
                 <label for="desc">Description:</label>
-                <textarea id="desc" v-model="editForm.desc" required></textarea>
+                <textarea class="uk-input" id="desc" v-model="editForm.desc" required></textarea>
             </div>
-            <div>
+            <div class="uk-margin">
                 <label for="imgPath">Image URL:</label>
-                <input id="imgPath" v-model="editForm.imgPath" />
+                <input class="uk-input" id="imgPath" v-model="editForm.imgPath" />
             </div>
-            <div>
+            <div class="uk-margin">
                 <button type="submit" class="uk-button uk-button-primary">Enregistrer</button>
                 <button type="button" class="uk-button uk-button-default" @click="closeEditDialog">Annuler</button>
             </div>
@@ -34,15 +34,17 @@
     </dialog>
     <div class="page-two">
         <h4>Détails</h4>
-        <div v-if="product">
-            <img :src="product.imgPath" alt="Image du produit" />
-            <h3>{{ product.title }}</h3>
-            <p>Auteur: {{ product.author }}</p>
-            <p>Description: {{ product.desc }}</p>
-            <div>
-                <button class="uk-button uk-button-primary" @click="$router.push('/articles')">Retour à la liste</button>
-                <button class="uk-button uk-button-default" @click="openEditDialog">Modifier</button>
-                <button class="uk-button uk-button-danger" @click="deleteProduct">Supprimer</button>
+        <div v-if="product" class="uk-width-1-3@m">
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                <img :src="product.imgPath" alt="Image du produit" />
+                <h3>{{ product.title }}</h3>
+                <p>Auteur: {{ product.author }}</p>
+                <p>Description: {{ product.desc }}</p>
+                <div>
+                    <button class="uk-button uk-button-primary" @click="$router.push('/articles')">Retour à la liste</button>
+                    <button class="uk-button uk-button-default" @click="openEditDialog">Modifier</button>
+                    <button class="uk-button uk-button-danger" @click="deleteProduct">Supprimer</button>
+                </div>
             </div>
         </div>
         <div v-else>

@@ -3,7 +3,7 @@
         <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-left">
                 <a class="uk-navbar-item uk-logo" href="#">
-                    Logo
+                    TP ElectronJS
                 </a>
             </div>
             <div class="uk-navbar-center">
@@ -12,7 +12,7 @@
                         <router-link to="/articles">Articles</router-link>
                     </li>
                     <li>
-                        <router-link to="/">Page Two</router-link>
+                        <!-- <router-link to="/">Page Two</router-link> -->
                     </li>
                 </ul>
             </div>

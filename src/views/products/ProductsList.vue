@@ -1,9 +1,5 @@
 <template>
     <div class="page-one">
-        <button class="uk-button uk-button-success" @click="showAddDialog = true">
-            Ajouter un article
-        </button>
-
         <template v-if="showAddDialog">
             <div class="uk-modal uk-open" style="display: block;">
                 <div class="uk-modal-dialog uk-modal-body">
@@ -42,9 +38,14 @@
 
         <!-- <h1>{{ message }}</h1> -->
         <div v-if="articles.length > 0">
-            <h4>Liste des articles</h4>
-            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-                <div uk-grid uk-height-match="target: > div > .uk-card">
+            <div class="uk-flex uk-flex-between uk-margin-bottom">
+                <h4>Liste des articles</h4>
+                <button class="uk-button uk-button-success" @click="showAddDialog = true">
+                    Ajouter un article
+                </button>
+            </div>
+            <div class="uk-child-width-expand@s uk-text-center">
+                <div uk-grid uk-height-match="target: > div > .uk-card" class="uk-grid-small uk-grid-match">
                     <div class="uk-width-1-3@m" v-for="article in articles" :key="article.id">
                         <div class="uk-card uk-card-default uk-card-hover uk-card-body">
                             <h3 class="uk-card-title">{{ article.title }}</h3>
@@ -110,7 +111,7 @@ export default {
                 if (jsonResponse.code === "200") {
                     this.openMessageDialog('Article ajouté avec succès.');
                     this.showAddDialog = false;
-                    this.newArticle = { title: '', author: '' };
+                    this.newArticle = { title: '', desc: '', imgPath: '', author: '' };
                     await this.callApi();
                 } else {
                     this.openMessageDialog('Erreur lors de l\'ajout de l\'article.');
