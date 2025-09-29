@@ -57,7 +57,7 @@
             </div>
         </div>
         <div v-else>
-            <h3 class="uk-text-center">Aucun article trouvé.</h3>
+            <h3 class="uk-text-center">Aucun article trouvé;</h3>
         </div>
     </div>
 </template>
