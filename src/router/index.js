@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import ProductsList from '../views/Products/ProductsList.vue';
-import ProductDetails from '../views/Products/ProductDetails.vue';
+import ProductsList from '../views/products/ProductsList.vue';
+import ProductDetails from '../views/products/ProductDetails.vue';
 import Register from '../views/auth/Register.vue';
 import Login from '../views/auth/Login.vue';
 
